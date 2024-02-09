@@ -1,0 +1,17 @@
+.drop-container .dropzone {
+    text-align: center;
+    height: 80vh;
+    width: 100%;
+    background-color: #f5f5f5;
+    border: 2px dashed #d3d3d3;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border .3s ease;
+    padding-top: 35px;
+}
+
+.drop-container .dropzone span {
+    font-size: 13px;
+    color: #a5a5a5;
+    margin: 10px 0;
+}

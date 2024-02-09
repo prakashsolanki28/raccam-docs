@@ -1,0 +1,37 @@
+html {
+    border: none;
+}
+
+* {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.control-panel {
+    font-size: 16px;
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.align-items-baseline {
+    -ms-flex-align: baseline !important;
+    align-items: baseline !important;
+}
+
+.disabled {
+    cursor: not-allowed !important;
+    color: lightgray;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.react-pdf__Page>div {
+    display: none;
+}

@@ -1,0 +1,22 @@
+/* .rpv-core__inner-pages::-webkit-scrollbar{
+    display: none !important;
+} */
+
+.rpv-core__inner-pages {
+    overflow: hidden !important;
+}
+
+.rpv-core__inner-page {
+    width: auto !important;
+}
+
+.pdf_hide_scroll_card {
+    padding: 15px 15px 5px 15px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    transition: all 0.3s;
+}
+
+.pdf_hide_scroll_card:hover {
+    border: 1px solid #000;
+}
