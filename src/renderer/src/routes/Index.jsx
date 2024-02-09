@@ -25,7 +25,7 @@ function Index() {
           </Route>
         </Route>
         <Route path='web' element={<WebView />} />
-        <Route path='/web/example' element={<Example />} />
+        <Route path='/web/open/:url' element={<Example />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </HashRouter>
