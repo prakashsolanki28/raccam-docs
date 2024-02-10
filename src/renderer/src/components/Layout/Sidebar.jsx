@@ -62,6 +62,29 @@ function Sidebar() {
                             <span className="nav-link-text ms-1">Browser</span>
                         </Link>
                     </li>
+                    <li className="nav-item">
+                        <Link to="/dashboard/pdf" className="nav-link">
+                            <div className="icon icon-shape icon-sm px-0 text-center d-flex align-items-center justify-content-center">
+                                <FaFilePdf />
+                            </div>
+                            <span className="nav-link-text ms-1">Image</span>
+                        </Link>
+                    </li>
+                    <li className="nav-item border-start my-0 pt-2 w-75">
+                        <Link className="nav-link position-relative ms-0 ps-2 py-2" to="/dashboard/jpg/to_png">
+                            <span className="nav-link-text ms-1">Jpg to Png</span>
+                        </Link>
+                    </li>
+                    <li className="nav-item border-start my-0 pt-2 w-75">
+                        <Link className="nav-link position-relative ms-0 ps-2 py-2" to="/dashboard/png/to_jpg">
+                            <span className="nav-link-text ms-1">Png to Png</span>
+                        </Link>
+                    </li>
+                    <li className="nav-item border-start my-0 pt-2 w-75">
+                        <Link className="nav-link position-relative ms-0 ps-2 py-2" to="/dashboard/image/compress">
+                            <span className="nav-link-text ms-1">Compress Image</span>
+                        </Link>
+                    </li>
                 </ul>
             </div>
         </aside>

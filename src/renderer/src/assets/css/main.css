@@ -35,3 +35,17 @@ body::-webkit-scrollbar {
 .react-pdf__Page>div {
     display: none;
 }
+
+.hover-to-gray {
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.hover-to-gray:hover {
+    background-color: #ebebf4;
+}
+
+.bg-gray {
+    background-color: #ebebf4;
+}

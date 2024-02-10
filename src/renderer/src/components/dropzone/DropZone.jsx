@@ -12,7 +12,11 @@ function DropZone({ onFilesSelected, accept, maxFiles, title, subtitle }) {
             ? { 'application/pdf': ['.pdf'] }
             : accept === 'image'
                 ? { 'image/*': ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.webp'] }
-                : { 'application/pdf': ['.pdf'], 'image/*': ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.webp'] }
+                : accept === 'jpg'
+                    ? { 'image/jpeg': ['.jpg'] }
+                    : accept === 'png'
+                        ? { 'image/png': ['.png'] }
+                        : { 'application/pdf': ['.pdf'], 'image/*': ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.webp'] }
     });
 
     const files = acceptedFiles.map(file => (

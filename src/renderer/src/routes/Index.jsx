@@ -9,6 +9,9 @@ import PDFDashboard from '../pages/pdf/PDFDashboard';
 import ImageToPDF from '../pages/pdf/ImageToPDF';
 import WebView from '../pages/webview/WebView';
 import Example from '../pages/webview/Example';
+import ToPng from '../pages/image/jpg/ToPng';
+import ToJpg from '../pages/image/png/ToJpg';
+import Compress from '../pages/image/Compress';
 
 function Index() {
   return (
@@ -22,6 +25,15 @@ function Index() {
             <Route path='merge' element={<Merge />} />
             <Route path='split' element={<Split />} />
             <Route path='image_to_pdf' element={<ImageToPDF />} />
+          </Route>
+          <Route path='jpg'>
+            <Route path='to_png' element={<ToPng />} />
+          </Route>
+          <Route path='png'>
+            <Route path='to_jpg' element={<ToJpg />} />
+          </Route>
+          <Route path='image'>
+            <Route path='compress' element={<Compress />} />
           </Route>
         </Route>
         <Route path='web' element={<WebView />} />
