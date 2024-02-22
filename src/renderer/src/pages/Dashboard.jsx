@@ -157,6 +157,8 @@ function Dashboard() {
                     <Link to="/" className="text-primary text-sm font-weight-bold d-flex justify-content-end align-items-center">Explore all  <FaAngleRight className='ms-2' />
                     </Link>
                 </div>
+
+                <Link to="/dashboard/video/crop">Crop Video</Link>
             </div >
         </>
     );

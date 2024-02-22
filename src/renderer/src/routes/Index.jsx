@@ -12,6 +12,8 @@ import Example from '../pages/webview/Example';
 import ToPng from '../pages/image/jpg/ToPng';
 import ToJpg from '../pages/image/png/ToJpg';
 import Compress from '../pages/image/Compress';
+import CompressPDF from '../pages/pdf/Compress';
+import Crop from '../pages/video/Crop';
 
 function Index() {
   return (
@@ -25,6 +27,7 @@ function Index() {
             <Route path='merge' element={<Merge />} />
             <Route path='split' element={<Split />} />
             <Route path='image_to_pdf' element={<ImageToPDF />} />
+            <Route path='compress' element={<CompressPDF />} />
           </Route>
           <Route path='jpg'>
             <Route path='to_png' element={<ToPng />} />
@@ -34,6 +37,9 @@ function Index() {
           </Route>
           <Route path='image'>
             <Route path='compress' element={<Compress />} />
+          </Route>
+          <Route path='video' >
+            <Route path='crop' element={<Crop />} />
           </Route>
         </Route>
         <Route path='web' element={<WebView />} />

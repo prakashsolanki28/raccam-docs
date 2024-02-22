@@ -49,3 +49,8 @@ body::-webkit-scrollbar {
 .bg-gray {
     background-color: #ebebf4;
 }
+
+
+.hidden-scroll::-webkit-scrollbar {
+    display: none;
+}

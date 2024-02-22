@@ -16,7 +16,9 @@ function DropZone({ onFilesSelected, accept, maxFiles, title, subtitle }) {
                     ? { 'image/jpeg': ['.jpg'] }
                     : accept === 'png'
                         ? { 'image/png': ['.png'] }
-                        : { 'application/pdf': ['.pdf'], 'image/*': ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.webp'] }
+                        : accept === 'video'
+                            ? { 'video/*': ['.mp4', '.webm', '.ogg'] }
+                            : { 'application/pdf': ['.pdf'], 'image/*': ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.webp'] }
     });
 
     const files = acceptedFiles.map(file => (
@@ -40,7 +42,7 @@ function DropZone({ onFilesSelected, accept, maxFiles, title, subtitle }) {
                     <input {...getInputProps()} />
                     <div className='text-center'>
                         <button className='btn btn-primary px-5 py-4 mb-0' type="button" onClick={open}>
-                            Select PDF Files
+                            Select {accept ? accept : ""} Files
                         </button>
                         <span className='d-block py-0'>Or</span>
                         <p>or drop {accept ? accept : 'PDFs'} here</p>

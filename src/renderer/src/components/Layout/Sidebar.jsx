@@ -9,14 +9,14 @@ import { BsBrowserChrome } from "react-icons/bs";
 
 function Sidebar() {
     return (
-        <aside className="sidenav navbar navbar-vertical navbar-expand-xs border-0 bg-slate-900 fixed-start" id="sidenav-main">
+        <aside className="sidenav navbar navbar-vertical navbar-expand-xs border-0 bg-slate-900 fixed-start hidden-scroll" id="sidenav-main">
             <div className="sidenav-header">
                 <i className="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"></i>
                 <Link to="/" className="navbar-brand d-flex align-items-center m-0">
                     <span className="font-weight-bold text-lg">PHQ Docs</span>
                 </Link>
             </div>
-            <div className="collapse navbar-collapse px-4 w-auto" id="sidenav-collapse-main">
+            <div className="collapse navbar-collapse px-4 w-auto" id="sidenav-collapse-main" style={{ height: '100vh' }}>
                 <ul className="navbar-nav">
                     <li className="nav-item">
                         <Link to="/dashboard" className="nav-link active">
@@ -54,6 +54,11 @@ function Sidebar() {
                             <span className="nav-link-text ms-1">Image To PDF</span>
                         </Link>
                     </li>
+                    <li className="nav-item border-start my-0 pt-2 w-75">
+                        <Link className="nav-link position-relative ms-0 ps-2 py-2" to="/dashboard/pdf/compress">
+                            <span className="nav-link-text ms-1">Compress PDF</span>
+                        </Link>
+                    </li>
                     <li className="nav-item">
                         <Link to="/web" className="nav-link">
                             <div className="icon icon-shape icon-sm px-0 text-center d-flex align-items-center justify-content-center">
@@ -83,6 +88,19 @@ function Sidebar() {
                     <li className="nav-item border-start my-0 pt-2 w-75">
                         <Link className="nav-link position-relative ms-0 ps-2 py-2" to="/dashboard/image/compress">
                             <span className="nav-link-text ms-1">Compress Image</span>
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/dashboard/video" className="nav-link">
+                            <div className="icon icon-shape icon-sm px-0 text-center d-flex align-items-center justify-content-center">
+                                <FaFilePdf />
+                            </div>
+                            <span className="nav-link-text ms-1">Video</span>
+                        </Link>
+                    </li>
+                    <li className="nav-item border-start my-0 pt-2 w-75">
+                        <Link className="nav-link position-relative ms-0 ps-2 py-2" to="/dashboard/video/crop">
+                            <span className="nav-link-text ms-1">Crop Video</span>
                         </Link>
                     </li>
                 </ul>
