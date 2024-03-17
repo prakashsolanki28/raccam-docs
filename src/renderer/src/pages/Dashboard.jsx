@@ -16,17 +16,29 @@ import { Pagination, Autoplay } from 'swiper/modules';
 import Merge_pdf from '../assets/images/merge_pdf.jpeg';
 import Split_pdf from '../assets/images/split_pdf.jpeg';
 import Compress_pdf from '../assets/images/compress_pdf.jpeg';
+import PoliceLogo from '../assets/images/logo.png';
 
 function Dashboard() {
     return (
         <>
             <div className="row">
                 <div className="col-md-12">
+                    <div className="d-flex justify-content-center align-items-center mb-3 mx-2">
+                        <div className="text-center">
+                            <img src={PoliceLogo} className='w-75' />
+                            <h2>राजस्थान पुलिस</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div className="row">
+                <div className="col-md-12">
                     <div className="d-md-flex align-items-center mb-3 mx-2">
                         <div className="mb-md-0 mb-3">
                             <h3 className="font-weight-bold mb-0">Hello, PHQ</h3>
                             <p className="mb-0">
-                                Welcome to your dashboard, manage your files and documents
+                                Welcome to phqDocs dashboard, manage your files and documents
                             </p>
                         </div>
                     </div>

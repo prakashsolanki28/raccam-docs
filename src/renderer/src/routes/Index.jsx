@@ -14,6 +14,7 @@ import ToJpg from '../pages/image/png/ToJpg';
 import Compress from '../pages/image/Compress';
 import CompressPDF from '../pages/pdf/Compress';
 import Crop from '../pages/video/Crop';
+import MetaData from '../pages/pdf/MetaData';
 
 function Index() {
   return (
@@ -28,6 +29,7 @@ function Index() {
             <Route path='split' element={<Split />} />
             <Route path='image_to_pdf' element={<ImageToPDF />} />
             <Route path='compress' element={<CompressPDF />} />
+            <Route path='metadata' element={<MetaData />} />
           </Route>
           <Route path='jpg'>
             <Route path='to_png' element={<ToPng />} />

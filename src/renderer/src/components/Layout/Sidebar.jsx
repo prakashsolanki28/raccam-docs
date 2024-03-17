@@ -59,6 +59,11 @@ function Sidebar() {
                             <span className="nav-link-text ms-1">Compress PDF</span>
                         </Link>
                     </li>
+                    <li className="nav-item border-start my-0 pt-2 w-75">
+                        <Link className="nav-link position-relative ms-0 ps-2 py-2" to="/dashboard/pdf/metadata">
+                            <span className="nav-link-text ms-1">Meta Data</span>
+                        </Link>
+                    </li>
                     <li className="nav-item">
                         <Link to="/web" className="nav-link">
                             <div className="icon icon-shape icon-sm px-0 text-center d-flex align-items-center justify-content-center">
@@ -82,7 +87,7 @@ function Sidebar() {
                     </li>
                     <li className="nav-item border-start my-0 pt-2 w-75">
                         <Link className="nav-link position-relative ms-0 ps-2 py-2" to="/dashboard/png/to_jpg">
-                            <span className="nav-link-text ms-1">Png to Png</span>
+                            <span className="nav-link-text ms-1">Png to Jpg</span>
                         </Link>
                     </li>
                     <li className="nav-item border-start my-0 pt-2 w-75">
@@ -101,6 +106,11 @@ function Sidebar() {
                     <li className="nav-item border-start my-0 pt-2 w-75">
                         <Link className="nav-link position-relative ms-0 ps-2 py-2" to="/dashboard/video/crop">
                             <span className="nav-link-text ms-1">Crop Video</span>
+                        </Link>
+                    </li>
+                    <li className="nav-item border-start my-0 pt-2 w-75">
+                        <Link className="nav-link position-relative ms-0 ps-2 py-2" to="/dashboard/video/crop">
+                            <span className="nav-link-text ms-1">Video to Audio</span>
                         </Link>
                     </li>
                 </ul>

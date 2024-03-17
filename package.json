@@ -28,6 +28,7 @@
     "electron-updater": "^6.1.7",
     "opencv.js": "^1.2.1",
     "pdf-lib": "^1.17.1",
+    "pdf-manip": "^1.0.3",
     "react-dropzone": "^14.2.3",
     "react-icons": "^5.0.1",
     "react-pdf": "^7.7.0",
