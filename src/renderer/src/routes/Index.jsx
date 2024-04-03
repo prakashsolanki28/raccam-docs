@@ -7,6 +7,7 @@ import Merge from '../pages/pdf/Merge';
 import Split from '../pages/pdf/Split';
 import PDFDashboard from '../pages/pdf/PDFDashboard';
 import ImageToPDF from '../pages/pdf/ImageToPDF';
+import JpgToPdf from '../pages/pdf/JpgToPdf';
 import WebView from '../pages/webview/WebView';
 import Example from '../pages/webview/Example';
 import ToPng from '../pages/image/jpg/ToPng';
@@ -28,6 +29,7 @@ function Index() {
             <Route path='merge' element={<Merge />} />
             <Route path='split' element={<Split />} />
             <Route path='image_to_pdf' element={<ImageToPDF />} />
+            <Route path='jpg_to_pdf' element={<JpgToPdf />} />
             <Route path='compress' element={<CompressPDF />} />
             <Route path='metadata' element={<MetaData />} />
           </Route>

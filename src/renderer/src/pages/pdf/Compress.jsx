@@ -1,9 +1,8 @@
-// eslint-disable-next-line no-unused-vars
 import React from 'react'
 
 function Compress() {
     return (
-        <div>Compress</div>
+        <div>Working on Compress</div>
     )
 }
 

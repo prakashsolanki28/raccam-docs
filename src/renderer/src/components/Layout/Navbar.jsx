@@ -3,6 +3,7 @@
 import React from 'react';
 import { CiSearch } from 'react-icons/ci';
 import { IoMdSettings } from 'react-icons/io';
+import PoliceLogo from '../../assets/images/logo.png';
 
 function Navbar() {
     return (
@@ -41,7 +42,7 @@ function Navbar() {
                         </li>
                         <li className="nav-item ps-2 d-flex align-items-center">
                             <a href="#" className="nav-link text-body p-0">
-                                <img src="https://picsum.photos/200/300" className="avatar avatar-sm" alt="avatar" />
+                                <img src={PoliceLogo} className="avatar avatar-sm" alt="avatar" />
                             </a>
                         </li>
                     </ul>

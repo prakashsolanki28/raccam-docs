@@ -8,7 +8,7 @@ import { RxCross2 } from "react-icons/rx";
 import { LuArrowUpDown } from "react-icons/lu";
 import { PDFDocument } from 'pdf-lib';
 
-function ImageToPDF() {
+function JpgToPdf() {
 
     const [files, setFiles] = React.useState([])
     const [pdfFile, setPdfFile] = React.useState(null);
@@ -36,17 +36,17 @@ function ImageToPDF() {
             dragItem.current = draggedOverItem;
         }
         if (pdfFile) {
-            convertPngToPDF();
+            convertJpgToPDF();
         }
     };
 
     const fileInputRef = useRef(null);
 
-    const convertPngToPDF = async () => {
+    const convertJpgToPDF = async () => {
         const pdfDoc = await PDFDocument.create();
-        
+
         for (const file of files) {
-            const img = await pdfDoc.embedPng(await file.arrayBuffer());
+            const img = await pdfDoc.embedJpg(await file.arrayBuffer());
             const page = pdfDoc.addPage([img.width, img.height]);
             page.drawImage(img, { x: 0, y: 0, width: img.width, height: img.height });
         }
@@ -58,13 +58,13 @@ function ImageToPDF() {
 
     useEffect(() => {
         if (pdfFile) {
-            convertPngToPDF();
+            convertJpgToPDF();
         }
     }, [files])
 
 
-  return (
-    <>
+    return (
+        <>
             {
                 files.length > 0 ? (
                     <div className='row'>
@@ -75,14 +75,14 @@ function ImageToPDF() {
                                         {
                                             files.map((file, index) => (
                                                 <div key={index}
-                                                className='d-inline-block bg-white m-2 pdf_hide_scroll_card position-relative w-25'
-                                                draggable onDragStart={(e) => handleDragStart(e, index)} onDragOver={(e) => handleDragOver(e, index)} style={{ cursor: 'move' }}>
+                                                    className='d-inline-block bg-white m-2 pdf_hide_scroll_card position-relative w-25'
+                                                    draggable onDragStart={(e) => handleDragStart(e, index)} onDragOver={(e) => handleDragOver(e, index)} style={{ cursor: 'move' }}>
                                                     <img src={URL.createObjectURL(file)} alt={file.name} className='img-fluid' />
                                                 </div>
-                                            ))    
+                                            ))
                                         }
                                     </div>
-                                ):(
+                                ) : (
                                     <div className='text-center'>
                                         <embed src={URL.createObjectURL(pdfFile)} type="application/pdf" width="100%" height="850px" />
                                     </div>
@@ -120,12 +120,12 @@ function ImageToPDF() {
                                             })
                                         }
                                         <Divider orientation="left" plain>
-                                            Png Image To Pdf
+                                            Jpg Image To Pdf
                                         </Divider>
                                         <div className='text-center'>
-                                            <button className='btn btn-primary py-3 w-100' onClick={convertPngToPDF} >Convert To Pdf</button>
+                                            <button className='btn btn-primary py-3 w-100' onClick={convertJpgToPDF} >Convert To Pdf</button>
                                             <p>
-                                                <small>Click on the button to convert images to pdf.</small>
+                                                <small>Click on the button to convert Jpg images to pdf.</small>
                                             </p>
                                         </div>
                                         {
@@ -152,67 +152,21 @@ function ImageToPDF() {
                             </div>
                         </div>
                     </div>
-                ):( 
-                    <DropZone accept="png" onFilesSelected={(files) => selectFiles(files)} title="Png Image to Pdf" subtitle="Drop your png images here or click to browse files." />
+                ) : (
+                    <DropZone accept="jpg" onFilesSelected={(files) => selectFiles(files)} title="Jpg Image to Pdf" subtitle="Drop your jpg images here or click to browse files." />
                 )
             }
 
-             {/* Add More Files */}
-             <input
+            {/* Add More Files */}
+            <input
                 type="file"
                 ref={fileInputRef}
                 style={{ display: 'none' }}
                 multiple
-                accept="image/png"
-                onChange={(e) => {selectFiles([...files, ...e.target.files]);}}
+                onChange={(e) => { selectFiles([...files, ...e.target.files]); }}
             />
-    </>
-  )
+        </>
+    )
 }
 
-export default ImageToPDF
-
-// import React, { useState } from 'react';
-// import { PDFDocument } from 'pdf-lib';
-
-// function ImageToPDF() {
-//     const [selectedFiles, setSelectedFiles] = useState([]);
-//     const [convertedFile, selectConvertedFile] = useState(null);
-
-//     const handleFileSelect = (e) => {
-//         setSelectedFiles([...e.target.files]);
-//     };
-
-//     const convertPngToPDF = async () => {
-//         const pdfDoc = await PDFDocument.create();
-        
-//         for (const file of selectedFiles) {
-//             const img = await pdfDoc.embedPng(await file.arrayBuffer());
-//             const page = pdfDoc.addPage([img.width, img.height]);
-//             page.drawImage(img, { x: 0, y: 0, width: img.width, height: img.height });
-//         }
-
-//         const pdfBytes = await pdfDoc.save();
-//         const blob = new Blob([pdfBytes], { type: 'application/pdf' });
-//         const link = document.createElement('a');
-//         link.href = URL.createObjectURL(blob);
-//         link.download = 'converted-images.pdf';
-//         link.click();
-//     };
-
-//     return (
-//         <div>
-//             <label>Select Png Images</label>
-//             <input type="file" className="form-control" multiple onChange={handleFileSelect} />
-//             {
-//                 selectedFiles && selectedFiles.length > 0 ? (
-//                     <button onClick={convertPngToPDF} className="btn btn-primary mt-3">Download Pdf</button>
-//                 ):(
-//                     ""
-//                 )
-//             }
-//         </div>
-//     );
-// }
-
-// export default ImageToPDF;
+export default JpgToPdf

@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import DropZone from '../../components/dropzone/DropZone'
-import { Document, Page, pdfjs } from 'react-pdf';
-import ControlPanel from '../../components/pdf/render/ControlPanel';
 import { Button, Flex, Divider, notification } from 'antd';
 import { ReloadOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
@@ -10,8 +8,6 @@ import { GoNumber } from "react-icons/go";
 import SplitPDF from '../../utils/pdf/split';
 import { PDFDocument } from 'pdf-lib';
 
-
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 function Split() {
 
@@ -29,16 +25,6 @@ function Split() {
         const loadedPdf = await PDFDocument.load(arrayBuffer);
         const pageCount = loadedPdf.getPageCount();
         setFilePagesCount(pageCount);
-    }
-
-    const [scale, setScale] = useState(1.0);
-    const [numPages, setNumPages] = useState(null);
-    const [pageNumber, setPageNumber] = useState(1);
-    const [isLoading, setIsLoading] = useState(true);
-
-    function onDocumentLoadSuccess({ numPages }) {
-        setNumPages(numPages);
-        setIsLoading(false);
     }
 
     // menus state
@@ -123,30 +109,12 @@ function Split() {
                         <div className='col-12 col-md-7 bg-white p-2'>
                             <section className="w-100 control-panel d-flex flex-column align-items-center">
                                 {
-                                    isLoading ? 'Loading...' : ''
+                                    splitPdfFile == null ? (
+                                        <embed src={URL.createObjectURL(files[0])} type="application/pdf" width="100%" height="850px" />
+                                    ) : (
+                                        <embed src={URL.createObjectURL(splitPdfFile)} type="application/pdf" width="100%" height="850px" />
+                                    )
                                 }
-                                <ControlPanel
-                                    scale={scale}
-                                    setScale={setScale}
-                                    numPages={numPages}
-                                    pageNumber={pageNumber}
-                                    setPageNumber={setPageNumber}
-                                    file={splitPdfFile ? splitPdfFile : files[0]}
-                                />
-                                <Divider className='mt-0 mb-2 p-0' />
-                                <Document
-                                    file={splitPdfFile ? splitPdfFile : files[0]}
-                                    onLoadSuccess={onDocumentLoadSuccess}
-                                    style={{ width: '100%', height: '50vh', overflow: 'auto' }}
-                                    className="pt-2 pb-4"
-                                >
-                                    <Page
-                                        pageNumber={pageNumber}
-                                        scale={scale}
-                                        loading="Loading..."
-                                        className="shadow-sm bg-white border w-100"
-                                    />
-                                </Document>
                             </section>
                         </div>
                         {/* Show Card */}
