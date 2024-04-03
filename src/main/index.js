@@ -1,7 +1,12 @@
 import { app, shell, BrowserWindow, ipcMain } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
-import icon from '../../resources/icon.png?asset'
+import icon from '../../resources/icon.jpg?asset'
+import { autoUpdater } from 'electron-updater'
+
+
+autoUpdater.autoDownload = false
+autoUpdater.autoInstallOnAppQuit = true
 
 function createWindow() {
   // Create the browser window.
@@ -15,7 +20,7 @@ function createWindow() {
       preload: join(__dirname, '../preload/index.js'),
       sandbox: false,
       webviewTag: true,
-      nodeIntegration:true,
+      nodeIntegration: true,
     }
   })
 
@@ -65,6 +70,9 @@ app.whenReady().then(() => {
     // dock icon is clicked and there are no other windows open.
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
   })
+
+  autoUpdater.checkForUpdates();
+
 })
 
 // Quit when all windows are closed, except on macOS. There, it's common

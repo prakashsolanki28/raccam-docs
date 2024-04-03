@@ -19,7 +19,7 @@ function Sidebar() {
             <div className="collapse navbar-collapse px-4 w-auto" id="sidenav-collapse-main" style={{ height: '100vh' }}>
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <Link to="/dashboard" className="nav-link active">
+                        <Link to="/" className="nav-link active">
                             <div className="icon icon-shape icon-sm px-0 text-center d-flex align-items-center justify-content-center">
                                 <MdDashboard />
                             </div>
@@ -27,7 +27,7 @@ function Sidebar() {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/dashboard/pdf" className="nav-link">
+                        <Link to="/pdf" className="nav-link">
                             <div className="icon icon-shape icon-sm px-0 text-center d-flex align-items-center justify-content-center">
                                 <FaFilePdf />
                             </div>
@@ -35,27 +35,27 @@ function Sidebar() {
                         </Link>
                     </li>
                     <li className="nav-item border-start my-0 pt-2 w-75">
-                        <Link className="nav-link position-relative ms-0 ps-2 py-2" to="/dashboard/pdf/merge">
+                        <Link className="nav-link position-relative ms-0 ps-2 py-2" to="/pdf/merge">
                             <span className="nav-link-text ms-1">Merge PDF</span>
                         </Link>
                     </li>
                     <li className="nav-item border-start my-0 pt-2 w-75">
-                        <Link className="nav-link position-relative ms-0 ps-2 py-2" to="/dashboard/pdf/split">
+                        <Link className="nav-link position-relative ms-0 ps-2 py-2" to="/pdf/split">
                             <span className="nav-link-text ms-1">Split PDF</span>
                         </Link>
                     </li>
                     <li className="nav-item border-start my-0 pt-2 w-75">
-                        <Link className="nav-link position-relative ms-0 ps-2 py-2" to="/dashboard/pdf/image_to_pdf">
+                        <Link className="nav-link position-relative ms-0 ps-2 py-2" to="/pdf/image_to_pdf">
                             <span className="nav-link-text ms-1">Png Images To PDF</span>
                         </Link>
                     </li>
                     <li className="nav-item border-start my-0 pt-2 w-75">
-                        <Link className="nav-link position-relative ms-0 ps-2 py-2" to="/dashboard/pdf/jpg_to_pdf">
+                        <Link className="nav-link position-relative ms-0 ps-2 py-2" to="/pdf/jpg_to_pdf">
                             <span className="nav-link-text ms-1">Jpg Images To PDF</span>
                         </Link>
                     </li>
                     <li className="nav-item border-start my-0 pt-2 w-75">
-                        <Link className="nav-link position-relative ms-0 ps-2 py-2" to="/dashboard/pdf/compress">
+                        <Link className="nav-link position-relative ms-0 ps-2 py-2" to="/pdf/compress">
                             <span className="nav-link-text ms-1">Compress PDF</span>
                         </Link>
                     </li>
@@ -68,7 +68,7 @@ function Sidebar() {
                         </Link>
                     </li> */}
                     <li className="nav-item">
-                        <Link to="/dashboard/pdf" className="nav-link">
+                        <Link to="/pdf" className="nav-link">
                             <div className="icon icon-shape icon-sm px-0 text-center d-flex align-items-center justify-content-center">
                                 <FaFilePdf />
                             </div>
@@ -76,17 +76,17 @@ function Sidebar() {
                         </Link>
                     </li>
                     <li className="nav-item border-start my-0 pt-2 w-75">
-                        <Link className="nav-link position-relative ms-0 ps-2 py-2" to="/dashboard/jpg/to_png">
+                        <Link className="nav-link position-relative ms-0 ps-2 py-2" to="/jpg/to_png">
                             <span className="nav-link-text ms-1">Jpg to Png</span>
                         </Link>
                     </li>
                     <li className="nav-item border-start my-0 pt-2 w-75">
-                        <Link className="nav-link position-relative ms-0 ps-2 py-2" to="/dashboard/png/to_jpg">
+                        <Link className="nav-link position-relative ms-0 ps-2 py-2" to="/png/to_jpg">
                             <span className="nav-link-text ms-1">Png to Jpg</span>
                         </Link>
                     </li>
                     <li className="nav-item border-start my-0 pt-2 w-75">
-                        <Link className="nav-link position-relative ms-0 ps-2 py-2" to="/dashboard/image/compress">
+                        <Link className="nav-link position-relative ms-0 ps-2 py-2" to="/image/compress">
                             <span className="nav-link-text ms-1">Compress Image</span>
                         </Link>
                     </li>

@@ -21,8 +21,8 @@ function Index() {
   return (
     <HashRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/dashboard" element={<Main />}>
+        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/" element={<Main />}>
           <Route index element={<Dashboard />} />
           <Route path="pdf">
             <Route index element={<PDFDashboard />} />
